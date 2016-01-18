@@ -12,6 +12,9 @@ public class ImageManager {
     public BufferedImage[] player = new BufferedImage[4];
     public BufferedImage[] attack = new BufferedImage[4];
     public BufferedImage[][] playeranim = new BufferedImage[4][3];
+    public BufferedImage[] tree = new BufferedImage[2];
+    public BufferedImage[] rock = new BufferedImage[2];
+    public BufferedImage[] chest = new BufferedImage[2];
     int i = 0;
     boolean up = true, dn = false;
     int delta = 0;
@@ -45,6 +48,9 @@ public class ImageManager {
         attack[1] = ss.crop32(3, 1, 32, 32);
         attack[2] = ss.crop32(3, 2, 32, 32);
         attack[3] = ss.crop32(3, 3, 32, 32);
+        
+        tree[0] = ss.crop(0, 1, 64, 128);
+        tree[1] = ss.crop(2, 1, 64, 128);
     }
     
     public void update(){

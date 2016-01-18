@@ -154,21 +154,10 @@ public class Map {
     }
     
 
-    public static void setUp(boolean up) {
-        Map.up = up;
-    }
-
-    public static void setDn(boolean dn) {
-        Map.dn = dn;
-    }
-
-    public static void setLt(boolean lt) {
-        Map.lt = lt;
-    }
-
-    public static void setRt(boolean rt) {
-        Map.rt = rt;
-    }
+    public static void setUp(boolean up) {Map.up = up;}
+    public static void setDn(boolean dn) {Map.dn = dn;}
+    public static void setLt(boolean lt) {Map.lt = lt;}
+    public static void setRt(boolean rt) {Map.rt = rt;}
 
     public static Tile getTile(int x, int y) {
         for(int i = 0; i < tiles.length; i++){

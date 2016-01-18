@@ -19,15 +19,19 @@ public class MapLoader {
     
     public static Map[] map;
     public static int currentMap = 0;
-    private static String[] files;
+    private static String[] files, Efiles;
     private static ImageManager im;
+    private static EntityMap[] Emap;
     static CollisionDetector cd;
+    private static boolean loaded = false;
     
-    public MapLoader(String[] maps, ImageManager IM){
+    public MapLoader(String[] maps, ImageManager IM, String[] Emaps){
         
         im = IM;
         map = new Map[maps.length+1];
         files = maps;
+        Emap = new EntityMap[Emaps.length+1];
+        Efiles = Emaps;
         
         loadMap();
         
@@ -36,22 +40,28 @@ public class MapLoader {
     public static void loadMap(){
     
         map[currentMap] = new Map(files[currentMap], im);
-        cd = new CollisionDetector(Player.x, Player.y, Game.player, map[currentMap]);
+        Emap[currentMap] = new EntityMap(Efiles[currentMap], im);
+        cd = new CollisionDetector(Player.x, Player.y, Game.player, map[currentMap], Emap[currentMap]);
         currentMap++;
+        loaded = true;
     }
     
     
     public static void Update(){
     
-        map[currentMap].Update();
-        
+        if(loaded){
+            map[currentMap - 1].Update();
+            Emap[currentMap - 1].Update();
+        }
         
     }
     
     public static void Render(Graphics g){
-    
-        map[currentMap].Render(g);
         
+        if(loaded){
+            map[currentMap - 1].Render(g);
+            Emap[currentMap - 1].Render(g);
+        }
         
     
     }

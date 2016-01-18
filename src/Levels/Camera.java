@@ -27,23 +27,27 @@ public class Camera {
         
         if(Player.x < x){        
             Map.setLt(true);
+            EntityMap.setLt(true);
             x = Player.x;
-        } else {Map.setLt(false);}
+        } else {Map.setLt(false); EntityMap.setLt(false);}
         
         if(Player.x > x){        
             Map.setRt(true);
+            EntityMap.setRt(true);
             x = Player.x;
-        } else {Map.setRt(false);}
+        } else {Map.setRt(false); EntityMap.setRt(false);}
         
         if(Player.y < y){
             Map.setUp(true);
+            EntityMap.setUp(true);
             y = Player.y;
-        } else { Map.setUp(false);}
+        } else { Map.setUp(false); EntityMap.setUp(false);}
         
         if(Player.y > y){
             Map.setDn(true);
+            EntityMap.setDn(true);
             y = Player.y;
-        } else { Map.setDn(false);}
+        } else { Map.setDn(false); EntityMap.setDn(false);}
         
     }
     

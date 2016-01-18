@@ -6,6 +6,7 @@
 package Utilities;
 
 import Entities.Player;
+import Levels.EntityMap;
 import Levels.Map;
 
 /**
@@ -17,14 +18,16 @@ public class CollisionDetector {
     private int x, y;
     private Player p;
     private Map m;
+    private EntityMap Em;
     private boolean collided = false;
     
-    public CollisionDetector(int xcent, int ycent, Player pl, Map map){
+    public CollisionDetector(int xcent, int ycent, Player pl, Map map, EntityMap Emap){
     
         x = xcent;
         y = ycent;
         p = pl;
         m = map;
+        Em = Emap;
     
     }
     
@@ -37,10 +40,18 @@ public class CollisionDetector {
                 p.collidedfw = true;
                 } else {p.collidedfw = false;}
                 
+                if(!(Em.getEntity(x, y).walkable)){
+                p.collidedfw = true;
+                } else {p.collidedfw = false;}
+                
                
                 x = p.getX() + 32;
                 y = p.getY() + 65;
                 if(!(m.getTile(x, y).walkable)){
+                p.collideddn = true;
+                } else {p.collideddn = false;}
+                
+                if(!(Em.getEntity(x, y).walkable)){
                 p.collideddn = true;
                 } else {p.collideddn = false;}
                
@@ -50,9 +61,17 @@ public class CollisionDetector {
                 p.collidedlt = true;
                 } else {p.collidedlt = false;}
                 
+                if(!(Em.getEntity(x, y).walkable)){
+                p.collidedlt = true;
+                } else {p.collidedlt = false;}
+                
                 x = p.getX() + 74;
                 y = p.getY() + 32;
                 if(!(m.getTile(x, y).walkable)){
+                p.collidedrt = true;
+                } else {p.collidedrt = false;}
+                
+                if(!(Em.getEntity(x, y).walkable)){
                 p.collidedrt = true;
                 } else {p.collidedrt = false;}
               

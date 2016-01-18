@@ -43,6 +43,7 @@ public class Game extends Canvas implements Runnable {
     public static Player player;
     
     private String[] maps = new String[6];
+    private String[] Emaps = new String[6];
     private Camera c;
     
     
@@ -75,10 +76,11 @@ public class Game extends Canvas implements Runnable {
         for(int i = 0; i < maps.length; i++){
         
             maps[i] = ("Res\\map " + (i+1) +".txt");
+            Emaps[i] = ("Res\\Emap " + (i+1) +".txt");
             
         }
         
-        ml = new MapLoader(maps, im);
+        ml = new MapLoader(maps, im, Emaps);
         player = new Player(445,300,im);
         c = new Camera(Player.x, Player.y);
         
