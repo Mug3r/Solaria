@@ -45,7 +45,7 @@ public class EntityMap {
             System.out.println("Entity Map not found");
         }
         
-        loadEntityMap(NoE, file);
+        loadEntityMap(NoE + 1, file);
         
         
     }
@@ -56,7 +56,7 @@ public class EntityMap {
             e = new Entity[Entities];
             
             Scanner m = new Scanner(new File(path));
-            int i = 0;
+            int i = 1;
             while(m.hasNext()){
                 
                 String line = m.nextLine();
@@ -84,7 +84,7 @@ public class EntityMap {
         } catch (FileNotFoundException ex) {           
             System.out.println("EntityMap not found");
         }
-        
+        e[0] = new Entity(0, 0, 0, im);
         loaded = true;
     
     }
@@ -95,7 +95,7 @@ public class EntityMap {
                 return e[i];
             }
         }
-        return null;
+        return e[0];
     }
     
     public void Update(){

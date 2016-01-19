@@ -24,7 +24,10 @@ public class Entity {
     public Entity(int type, int xco, int yco, ImageManager im){
     
         switch(type){
-        
+            //void
+            case 0:
+                walkable = true;
+                break;
             //Tree small
             case 1: 
                 skin = im.tree[0];

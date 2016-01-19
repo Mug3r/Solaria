@@ -36,45 +36,28 @@ public class CollisionDetector {
         
                 x = p.getX() + 32;
                 y = p.getY() - 1;
-                if(!(m.getTile(x, y).walkable)){
+                if(!(m.getTile(x, y).walkable) || !(Em.getEntity(x, y).walkable)){
                 p.collidedfw = true;
-                } else {p.collidedfw = false;}
-                
-                if(!(Em.getEntity(x, y).walkable)){
-                p.collidedfw = true;
-                } else {p.collidedfw = false;}
-                
+                } else {p.collidedfw = false;}                
                
                 x = p.getX() + 32;
                 y = p.getY() + 65;
-                if(!(m.getTile(x, y).walkable)){
+                if(!(m.getTile(x, y).walkable) || !(Em.getEntity(x, y).walkable)){
                 p.collideddn = true;
                 } else {p.collideddn = false;}
-                
-                if(!(Em.getEntity(x, y).walkable)){
-                p.collideddn = true;
-                } else {p.collideddn = false;}
-               
+                               
                 x = p.getX() -1;
                 y = p.getY() + 32;
-                if(!(m.getTile(x, y).walkable)){
-                p.collidedlt = true;
-                } else {p.collidedlt = false;}
-                
-                if(!(Em.getEntity(x, y).walkable)){
+                if(!(m.getTile(x, y).walkable) || !(Em.getEntity(x, y).walkable)){
                 p.collidedlt = true;
                 } else {p.collidedlt = false;}
                 
                 x = p.getX() + 74;
                 y = p.getY() + 32;
-                if(!(m.getTile(x, y).walkable)){
+                if(!(m.getTile(x, y).walkable) || !(Em.getEntity(x, y).walkable)){
                 p.collidedrt = true;
                 } else {p.collidedrt = false;}
                 
-                if(!(Em.getEntity(x, y).walkable)){
-                p.collidedrt = true;
-                } else {p.collidedrt = false;}
-              
     }
     
     

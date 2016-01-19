@@ -49,8 +49,8 @@ public class ImageManager {
         attack[2] = ss.crop32(3, 2, 32, 32);
         attack[3] = ss.crop32(3, 3, 32, 32);
         
-        tree[0] = ss.crop(0, 1, 64, 128);
-        tree[1] = ss.crop(2, 1, 64, 128);
+        tree[0] = ss.crop(1, 0, 32, 64);
+        tree[1] = ss.crop(1, 2, 64, 80);
     }
     
     public void update(){

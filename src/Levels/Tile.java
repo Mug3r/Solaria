@@ -51,22 +51,15 @@ public class Tile {
     
       public void Update() {
         
-       if(up){
-           
-           y += 2*speed;           
-       
-       }else if(dn){
-       
-           y -= 2*speed;
-           
+       if(up){           
+           y += 2*speed;         
+       }else if(dn){       
+           y -= 2*speed;           
        }
        
-       if(lt){
-       
+       if(lt){       
            x += 2*speed;
-       
-       }else if(rt){
-       
+       }else if(rt){       
            x -= 2*speed;           
        }
         
@@ -78,7 +71,6 @@ public class Tile {
     public void Render(Graphics g){
     
         g.drawImage(tile, x, y, 64, 64,  null);
-
     
     }
 
@@ -86,15 +78,8 @@ public class Tile {
     public void setDn(boolean d) {dn = d;}
     public void setLt(boolean l) {lt = l;}
     public void setRt(boolean r) {rt = r;}
-
     public void setSpeed(int s) {speed = s;}
-
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    } 
+    public int getX() {return x;}
+    public int getY() {return y;} 
  
 }
