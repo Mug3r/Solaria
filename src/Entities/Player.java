@@ -2,6 +2,8 @@ package Entities;
 
 import Graphics.ImageManager;
 import Levels.MapLoader;
+import static Main.Boot.scaleHeight;
+import static Main.Boot.scaleWidth;
 import Utilities.CollisionDetector;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -108,17 +110,9 @@ public class Player {
                          
         }
         
-        g.drawImage(player, x, y, 64, 64,  null);
+        g.drawImage(player, x, y, 64*scaleWidth, 64*scaleHeight,  null);
         
-        if(attacking){
-            if(lastSwing <= 0){
-                
-            Attack();
-            lastSwing = 180;
-            
-            }            
-            
-        }
+        
     }
     
     public void Attack(){

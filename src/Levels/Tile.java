@@ -2,6 +2,8 @@
 package Levels;
 
 import Graphics.ImageManager;
+import static Main.Boot.scaleHeight;
+import static Main.Boot.scaleWidth;
 import static Main.Game.SCALE;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -70,7 +72,7 @@ public class Tile {
     
     public void Render(Graphics g){
     
-        g.drawImage(tile, x, y, 64, 64,  null);
+        g.drawImage(tile, x, y, 64*scaleWidth, 64*scaleHeight,  null);
     
     }
 

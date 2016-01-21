@@ -6,6 +6,8 @@
 package Levels;
 
 import Graphics.ImageManager;
+import static Main.Boot.scaleHeight;
+import static Main.Boot.scaleWidth;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
@@ -113,7 +115,7 @@ public class Entity {
     }
     public void Render(Graphics g){
     
-        g.drawImage(skin, x, y, xs, ys, null);
+        g.drawImage(skin, x, y, xs*scaleWidth, ys*scaleHeight, null);
     
     }
 
