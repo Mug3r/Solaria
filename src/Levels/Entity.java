@@ -19,7 +19,7 @@ public class Entity {
     
     private BufferedImage skin;
     public int x, y, xs, ys;
-    public boolean walkable = false;
+    public boolean walkable = false, interactible = false;
     public boolean up = false, dn = false, lt = false, rt = false;
     private int speed = 2;
     
@@ -37,6 +37,7 @@ public class Entity {
                 y = yco;
                 xs = 64;
                 ys = 128;
+                interactible = false;
                 walkable = false;
                 break;
             //Tree Large
@@ -46,6 +47,7 @@ public class Entity {
                 y = yco;
                 xs = 128;
                 ys = 160;
+                interactible = false;
                 walkable = false;
                 break;
             //Rock Small
@@ -55,6 +57,7 @@ public class Entity {
                 y = yco;
                 xs = 32;
                 ys = 32;
+                interactible = false;
                 walkable = false;
                 break;
             //Rock Large
@@ -64,6 +67,7 @@ public class Entity {
                 y = yco;
                 xs = 64;
                 ys = 64;
+                interactible = false;
                 walkable = false;
                 break;
             //Chest Small
@@ -73,6 +77,7 @@ public class Entity {
                 y = yco;
                 xs = 64;
                 ys = 64;
+                interactible = true;
                 walkable = false;
                 break;
             //Chest Large
@@ -82,6 +87,7 @@ public class Entity {
                 y = yco;
                 xs = 128;
                 ys = 64;
+                interactible = true;
                 walkable = false;
                 break;
         }

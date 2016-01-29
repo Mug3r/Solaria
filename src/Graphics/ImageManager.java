@@ -14,7 +14,7 @@ public class ImageManager {
     public BufferedImage[][] playeranim = new BufferedImage[4][3];
     public BufferedImage[] tree = new BufferedImage[2];
     public BufferedImage[] rock = new BufferedImage[2];
-    public BufferedImage[] chest = new BufferedImage[2];
+    public BufferedImage[] chest = new BufferedImage[4];
     int i = 0;
     boolean up = true, dn = false;
     int delta = 0;

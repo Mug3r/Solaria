@@ -111,17 +111,8 @@ public class Player {
         }
         
         g.drawImage(player, x, y, 64*scaleWidth, 64*scaleHeight,  null);
-        
-        if(attacking){
-            if(lastSwing <= 0){
-                
-            Attack();
-            lastSwing = 180;
-            
-            }            
-            
+
         }
-    }
     
     public void Attack(){
     
