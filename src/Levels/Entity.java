@@ -19,9 +19,9 @@ public class Entity {
     
     private BufferedImage skin;
     public int x, y, xs, ys;
-    public boolean walkable = false, interactible = false;
+    public boolean walkable = false, interactible = false, near = false;
     public boolean up = false, dn = false, lt = false, rt = false;
-    private int speed = 2;
+    private int speed = 2, menuID = 0;
     
     public Entity(int type, int xco, int yco, ImageManager im){
     
@@ -39,6 +39,7 @@ public class Entity {
                 ys = 128;
                 interactible = false;
                 walkable = false;
+                menuID = 0;
                 break;
             //Tree Large
             case 2:
@@ -49,6 +50,7 @@ public class Entity {
                 ys = 160;
                 interactible = false;
                 walkable = false;
+                menuID = 0;
                 break;
             //Rock Small
             case 3:
@@ -59,6 +61,7 @@ public class Entity {
                 ys = 32;
                 interactible = false;
                 walkable = false;
+                menuID = 0;
                 break;
             //Rock Large
             case 4:
@@ -69,26 +72,33 @@ public class Entity {
                 ys = 64;
                 interactible = false;
                 walkable = false;
+                menuID = 0;
                 break;
             //Chest Small
             case 5:
-                skin = im.chest[0];
+                if(!near){
+                    skin = im.chest[0];
+                } else {skin = im.chest[2];}
                 x = xco;
                 y = yco;
                 xs = 64;
                 ys = 64;
                 interactible = true;
                 walkable = false;
+                menuID = 1;
                 break;
             //Chest Large
             case 6:
-                skin = im.chest[1];
+                if(!near){
+                    skin = im.chest[1];
+                } else {skin = im.chest[3];}
                 x = xco;
                 y = yco;
                 xs = 128;
                 ys = 64;
                 interactible = true;
                 walkable = false;
+                menuID = 2;
                 break;
         }
         

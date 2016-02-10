@@ -23,7 +23,9 @@ public class Player {
     private double health;
     private boolean running = false;
     private static boolean up = false, dn = false, lt = false, rt = false;    
-    public static boolean collidedlt = false, collidedrt = false, collidedfw = false, collideddn = false, attacking = false;
+    public static boolean collidedlt = false, collidedrt = false, collidedfw = false, collideddn = false;
+    public static boolean attacking = false; 
+    public static boolean interactablefw = false, interactablebk = false, interactablelt = false, interactablert = false;
     private int lastSwing = 180;
     
     public Player(int xco, int yco, ImageManager im){

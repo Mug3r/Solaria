@@ -40,6 +40,7 @@ public class Game extends Canvas implements Runnable {
     private String spriteSheetURL = "/SpriteSheet.png";
     private CollisionDetector cd;
     
+    
     public static Player player;
     
     private String[] maps = new String[6];

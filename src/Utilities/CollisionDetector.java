@@ -58,6 +58,29 @@ public class CollisionDetector {
                 p.collidedrt = true;
                 } else {p.collidedrt = false;}
                 
+                x = p.getX() + 32;
+                y = p.getY() - 1;
+                if(Em.getEntity(x, y).interactible){
+                    Em.getEntity(x,y).near = true; p.interactablefw = true;
+                } else { p.interactablefw = false; }
+                
+                x = p.getX() + 32;
+                y = p.getY() + 65;
+                if(Em.getEntity(x, y).interactible){
+                    Em.getEntity(x,y).near = true; p.interactablebk = true;
+                } else { p.interactablebk = false; }
+                
+                x = p.getX() -1;
+                y = p.getY() + 32;
+                if(Em.getEntity(x, y).interactible){
+                    Em.getEntity(x,y).near = true; p.interactablelt = true;
+                } else { p.interactablelt = false; }
+                
+                x = p.getX() + 74;
+                y = p.getY() + 32;
+                if(Em.getEntity(x, y).interactible){
+                    Em.getEntity(x,y).near = true; p.interactablert = true;
+                } else { p.interactablert = false; }
     }
     
     
